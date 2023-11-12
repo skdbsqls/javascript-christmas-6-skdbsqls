@@ -20,7 +20,10 @@ const EVENT = Object.freeze([
   {
     name: EVENT_NAME.weekday,
     output: "평일 할인",
-    date: [0, 1, 2, 3, 4],
+    date: [
+      3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28,
+      31,
+    ],
     min_total: 10000,
     discount_course: COURSE.dessert,
     discount_price: 2023,
@@ -28,7 +31,7 @@ const EVENT = Object.freeze([
   {
     name: EVENT_NAME.weekend,
     output: "주말 할인",
-    date: [5, 6],
+    date: [1, 2, 8, 9, 15, 16, 22, 23, 29, 30],
     min_total: 10000,
     discount_course: COURSE.main,
     discount_price: 2023,
