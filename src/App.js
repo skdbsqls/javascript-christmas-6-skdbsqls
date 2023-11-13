@@ -13,7 +13,7 @@ class App {
   async #executeIntro() {
     OutputView.printIntro();
     this.#date = await InputView.readDate();
-    this.#menu = await InputView.readMenu();
+    this.#menu = await InputView.readOrder();
     OutputView.printPreview(this.#date);
   }
 }
