@@ -24,19 +24,19 @@ const MENU = Object.freeze([
 ]);
 
 const APPETIZER_MENU = Object.freeze(
-  MENU.find((menu) => menu.course === COURSE.appetizer)
+  MENU.filter((menu) => menu.course === COURSE.appetizer)
 );
 
 const MAIN_MENU = Object.freeze(
-  MENU.find((menu) => menu.course === COURSE.main)
+  MENU.filter((menu) => menu.course === COURSE.main)
 );
 
 const DESSERT_MENU = Object.freeze(
-  MENU.find((menu) => menu.course === COURSE.dessert)
+  MENU.filter((menu) => menu.course === COURSE.dessert)
 );
 
 const BEVERAGE_MENU = Object.freeze(
-  MENU.find((menu) => menu.course === COURSE.beverage)
+  MENU.filter((menu) => menu.course === COURSE.beverage)
 );
 
 const PRESENT_MENU = Object.freeze({ name: "삼페인", price: 25000 });
