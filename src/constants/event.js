@@ -13,9 +13,9 @@ const EVENT = Object.freeze([
   {
     name: EVENT_NAME.christmas,
     output: "크리스마스 디데이 할인",
-    date: [Array.from({ length: 25 }, (_, i) => i + 1)],
+    date: Array.from({ length: 25 }, (_, i) => i + 1),
     min_total: 10000,
-    discount_price: (day) => 1000 + day * 100,
+    discount_price: (day) => 1000 + (day - 1) * 100,
   },
   {
     name: EVENT_NAME.weekday,
@@ -73,9 +73,9 @@ const PRESENT_EVENT = Object.freeze(
 );
 
 const EVENT_BADGE = Object.freeze([
-  { name: "별", total_benefit: 5000 },
-  { name: "트리", total_benefit: 10000 },
   { name: "산타", total_benefit: 20000 },
+  { name: "트리", total_benefit: 10000 },
+  { name: "별", total_benefit: 5000 },
 ]);
 
 export {
