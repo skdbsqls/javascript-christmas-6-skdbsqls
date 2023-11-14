@@ -10,6 +10,7 @@ class Menu {
     this.#count = orderedMenu.count;
   }
 
+  // 메뉴 정보 가져오기
   getMenuInfo() {
     const menuInfo = {
       course: this.#detail.course,
@@ -19,6 +20,8 @@ class Menu {
     };
     return menuInfo;
   }
+
+  // 메뉴와 개수를 곱한 값 가져오기
   getMenuPrice() {
     const menuPrice = this.#detail.price * this.#count;
     return menuPrice;

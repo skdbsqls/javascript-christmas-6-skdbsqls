@@ -11,25 +11,22 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.preview(day));
   },
   // 주문 메뉴 출력
-  printMenu(menus) {
+  printMenu(order) {
     Console.print(OUTPUT_MESSAGE.ordered_menu);
 
-    menus.forEach((menu) => {
-      const menuInfo = menu.getMenuInfo();
+    const orderDetail = order.getOrderDetail();
 
-      Console.print(`${menuInfo.name} ${menuInfo.count}개`);
+    orderDetail.forEach((order) => {
+      Console.print(`${order.name} ${order.count}개`);
     });
   },
   // 할인 전 총주문 금액 출력
-  printBefore(menus) {
+  printBefore(order) {
     Console.print(OUTPUT_MESSAGE.before_total);
 
-    const totalPrice = menus.reduce((acc, crr) => {
-      crr = crr.getMenuPrice();
-      return acc + crr;
-    }, 0);
+    const beforeTotal = order.getBeforeTotal();
 
-    Console.print(`${totalPrice}원`);
+    Console.print(`${beforeTotal}원`);
   },
   // 증정 메뉴 출력
   printPresent() {

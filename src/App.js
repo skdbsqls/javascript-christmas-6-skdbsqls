@@ -1,4 +1,4 @@
-import Menu from "./damains/Menu.js";
+import Event from "./damains/Event.js";
 import InputView from "./views/InputView.js";
 import OutputView from "./views/OutputView.js";
 
@@ -20,11 +20,11 @@ class App {
     OutputView.printPreview(this.#date);
   }
 
-  // 주문 확인 (메뉴 및 금액 출력)
+  // 주문 확인 (주문 메뉴 및 할인 전 총주문 금액 출력)
   #executePrintOrder() {
-    this.#menus = this.#menus.map((menu) => new Menu(menu));
-    OutputView.printMenu(this.#menus);
-    OutputView.printBefore(this.#menus);
+    const order = new Event(this.#date, this.#menus);
+    OutputView.printMenu(order);
+    OutputView.printBefore(order);
   }
 }
 
