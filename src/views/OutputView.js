@@ -24,7 +24,7 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.before_total);
 
     const beforePrice = order.getBeforePrice();
-    Console.print(`${beforePrice}원`);
+    Console.print(`${beforePrice.toLocaleString()}원`);
   },
   // 증정 메뉴 출력
   printPresent(order) {
@@ -42,7 +42,7 @@ const OutputView = {
     const benefit = order.getBenefitDetail();
     if (benefit) {
       benefit.forEach((event) => {
-        Console.print(`${event.name}: -${event.discount}원`);
+        Console.print(`${event.name}: -${event.discount.toLocaleString()}원`);
       });
     } else Console.print(OUTPUT_MESSAGE.none_event);
   },
@@ -52,7 +52,7 @@ const OutputView = {
 
     const benefitTotal = order.getBenefitTotal();
     if (benefitTotal) {
-      Console.print(`-${benefitTotal}원`);
+      Console.print(`-${benefitTotal.toLocaleString()}원`);
     } else Console.print(OUTPUT_MESSAGE.none_benefit);
   },
   // 할인 후 예상 결제 금액 출력
@@ -60,7 +60,7 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.after_total);
 
     const afterPrice = order.getAfterPrice();
-    Console.print(`${afterPrice}원`);
+    Console.print(`${afterPrice.toLocaleString()}원`);
   },
   // 이벤트 배지 출력
   printBadge(order) {
