@@ -40,6 +40,9 @@ const OrderValidate = {
       if (count < MIN_MENU) {
         throw new Error(ERROR_MESSAGE.invalid_menu);
       }
+      if (isNaN(count)) {
+        throw new Error(ERROR_MESSAGE.invalid_menu);
+      }
     });
   },
   // 중복 메뉴를 입력한 경우
