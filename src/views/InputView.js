@@ -9,7 +9,7 @@ const InputView = {
     const date = await Console.readLineAsync(INPUT_MESSAGE.date);
     try {
       this.validateDate(date);
-      return date;
+      return Number(date);
     } catch (error) {
       Console.print(error.message);
       return this.readDate();
