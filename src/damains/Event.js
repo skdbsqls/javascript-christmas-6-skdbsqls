@@ -47,7 +47,7 @@ class Event {
       events.push(this.getWeekdayEvent());
     }
     if (WEEKEND_EVENT.date.includes(this.#date) && this.getMainCount()) {
-      events.push(this.getWeenendEvent);
+      events.push(this.getWeenendEvent());
     }
     if (SPECIAL_EVENT.date.includes(this.#date)) {
       events.push(this.getSpecialEvent());
