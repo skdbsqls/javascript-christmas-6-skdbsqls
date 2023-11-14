@@ -14,6 +14,8 @@ const OUTPUT_MESSAGE = Object.freeze({
   benefit_price: "\n<총혜택 금액>",
   after_total: "\n<할인 후 예상 결제 금액>",
   event_badge: "\n<12월 이벤트 배지>",
+  none_event: "없음",
+  none_benefit: "0원",
 });
 
 const ERROR_MESSAGE = Object.freeze({
