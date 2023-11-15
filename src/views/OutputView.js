@@ -18,6 +18,7 @@ const OutputView = {
     orderDetail.forEach((order) => {
       Console.print(`${order.name} ${order.count}개`);
     });
+    return orderDetail;
   },
   // 할인 전 총주문 금액 출력
   printBefore(order) {
@@ -25,6 +26,8 @@ const OutputView = {
 
     const beforePrice = order.getBeforePrice();
     Console.print(`${beforePrice.toLocaleString()}원`);
+
+    return beforePrice;
   },
   // 증정 메뉴 출력
   printPresent(order) {

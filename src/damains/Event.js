@@ -1,4 +1,3 @@
-import Menu from "./Menu.js";
 import {
   PRESENT_EVENT,
   CHRISTMAS_EVENT,
@@ -11,30 +10,14 @@ import {
 class Event {
   #date;
 
-  #order;
-
   #orderDetail;
 
   #beforePrice;
 
-  constructor(date, menus) {
+  constructor(date, orderDetail, beforePrice) {
     this.#date = date;
-    this.#order = menus.map((menu) => new Menu(menu));
-  }
-
-  // 주문 상세 내역 가져오기
-  getOrderDetail() {
-    this.#orderDetail = this.#order.map((menu) => menu.getMenuInfo());
-    return this.#orderDetail;
-  }
-
-  // 할인 전 총주문 금액 가져오기
-  getBeforePrice() {
-    this.#beforePrice = this.#order.reduce(
-      (total, menu) => total + menu.getMenuPrice(),
-      0
-    );
-    return this.#beforePrice;
+    this.#orderDetail = orderDetail;
+    this.#beforePrice = beforePrice;
   }
 
   // 날짜에 따른 이벤트

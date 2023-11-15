@@ -1,3 +1,4 @@
+import Order from "./damains/Order.js";
 import Event from "./damains/Event.js";
 import InputView from "./views/InputView.js";
 import OutputView from "./views/OutputView.js";
@@ -8,6 +9,8 @@ class App {
   #menus;
 
   #order;
+
+  #event;
 
   async run() {
     await this.#executeIntro();
@@ -25,18 +28,20 @@ class App {
 
   // 주문 확인 (주문 메뉴 및 할인 전 총주문 금액 출력)
   #executeOrder() {
-    this.#order = new Event(this.#date, this.#menus);
-    OutputView.printMenu(this.#order);
-    OutputView.printBefore(this.#order);
+    this.#order = new Order(this.#menus);
+    const orderDetail = OutputView.printMenu(this.#order);
+    const beforePrice = OutputView.printBefore(this.#order);
+
+    this.#event = new Event(this.#date, orderDetail, beforePrice);
   }
 
   // 이벤트 혜택 내역
   #executeEvent() {
-    OutputView.printPresent(this.#order);
-    OutputView.printBenefit(this.#order);
-    OutputView.printBenefitPrice(this.#order);
-    OutputView.printAfter(this.#order);
-    OutputView.printBadge(this.#order);
+    OutputView.printPresent(this.#event);
+    OutputView.printBenefit(this.#event);
+    OutputView.printBenefitPrice(this.#event);
+    OutputView.printAfter(this.#event);
+    OutputView.printBadge(this.#event);
   }
 }
 
