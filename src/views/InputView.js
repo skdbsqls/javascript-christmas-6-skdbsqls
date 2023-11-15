@@ -40,6 +40,7 @@ const InputView = {
     OrderValidate.doNotEnter(order);
 
     const orders = this.getOrders(order);
+    console.log("orders", orders);
     OrderValidate.notSeparateByDash(orders);
 
     const menus = this.getMenus(orders);
@@ -53,8 +54,11 @@ const InputView = {
   },
 
   getOrders(order) {
-    const orders = order.split(",");
-    return orders;
+    if (order.includes(",")) {
+      const orders = order.split(",");
+      return orders;
+    }
+    return [order];
   },
 
   getMenus(orders) {
