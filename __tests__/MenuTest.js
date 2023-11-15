@@ -1,8 +1,9 @@
 import Menu from "../src/damains/Menu.js";
 
 describe("메뉴 클래스 테스트", () => {
+  // given
+  const input = { name: "해산물파스타", count: 1 };
   test("정보 가져오기", () => {
-    const input = { name: "해산물파스타", count: 1 };
     const output = {
       course: "main",
       name: "해산물파스타",
@@ -15,7 +16,6 @@ describe("메뉴 클래스 테스트", () => {
     expect(result).toStrictEqual(output);
   });
   test("총금액 가져오기", () => {
-    const input = { name: "해산물파스타", count: 1 };
     const output = 35000;
 
     const result = new Menu(input).getMenuPrice();
