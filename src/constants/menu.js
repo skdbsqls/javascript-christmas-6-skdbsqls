@@ -39,7 +39,7 @@ const BEVERAGE_MENU = Object.freeze(
   MENU.filter((menu) => menu.course === COURSE.beverage)
 );
 
-const PRESENT_MENU = Object.freeze({ name: "삼페인", price: 25000 });
+const PRESENT_MENU = Object.freeze({ name: "샴페인", price: 25000 });
 
 const MIN_MENU = 1;
 const MAX_MENU = 20;
